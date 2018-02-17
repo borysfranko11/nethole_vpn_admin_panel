@@ -138,13 +138,15 @@ class MY_Controller extends MX_Controller {
 	// Verify user login (regardless of user group)
 	protected function verify_login($redirect_url = NULL)
 	{
-		if ( !$this->ion_auth->logged_in() )
-		{
-			if ( $redirect_url==NULL )
-				$redirect_url = $this->mConfig['login_url'];
+            if ( !$this->ion_auth->logged_in() )
+            {
+                if ( $redirect_url==NULL )
+                    $redirect_url = $this->mConfig['login_url'];
 
-			redirect($redirect_url);
-		}
+                redirect($redirect_url);
+            }
+
+
 	}
 
 	// Verify user authentication
@@ -277,4 +279,5 @@ class MY_Controller extends MX_Controller {
 
 // include base controllers
 require APPPATH."core/controllers/Admin_Controller.php";
+require APPPATH."core/controllers/Reseller_Controller.php";
 require APPPATH."core/controllers/Api_Controller.php";
